@@ -1,0 +1,18 @@
+package encyclo;
+
+option java_package = "com.encyclo.messages";
+option java_outer_classname = "CustomModels";
+
+message Entity {
+  optional int32 id = 1;
+  optional float rank = 2;
+  optional int32 parent_id = 3;
+  optional int32 component_id = 4;
+  optional int32 user_id = 5;
+  repeated Document documents = 6;
+}
+
+message Document {
+  optional int32 id = 1;
+  repeated Entity entities = 2;
+}

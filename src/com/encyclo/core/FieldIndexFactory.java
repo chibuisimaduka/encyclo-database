@@ -1,4 +1,4 @@
-package encyclo;
+package com.encyclo.core;
 
 import com.google.protobuf.Descriptors.Descriptor;
 

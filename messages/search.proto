@@ -1,0 +1,45 @@
+package encyclo;
+
+option java_package = "com.encyclo.messages";
+option java_outer_classname = "Search";
+
+message SearchQuery {
+  optional string index_name = 1;
+  optional string table_name = 2;
+  repeated int32 select_field = 3;
+  optional WhereStatement where_statement = 4;
+
+  message WhereStatement {
+    optional int32 field = 1;
+    optional Operator operator = 2;
+    optional string value = 3;
+
+    enum Operator {
+      EQUALS = 0;
+      GREATER = 1;
+      SMALLER = 2;
+      GREATER_OR_EQUALS = 3;
+      SMALLER_OR_EQUALS = 4;
+      NOT_EQUALS = 5;
+      IS_NULL = 6;
+      IS_NOT_NULL = 7;
+    }
+
+    repeated LogicalStatement additional_statement = 4;
+
+    message LogicalStatement {
+      optional LogicalStatementType logical_type = 1;
+      optional WhereStatement where_statement = 2;
+      
+      enum LogicalStatementType {
+        OR = 0;
+        AND = 1;
+        XOR = 2;
+      }
+    }
+  }
+}
+
+message SearchResponse {
+  repeated bytes response_message = 1;
+}

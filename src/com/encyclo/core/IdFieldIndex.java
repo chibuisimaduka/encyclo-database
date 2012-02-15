@@ -1,4 +1,4 @@
-package encyclo;
+package com.encyclo.core;
 
 public class IdFieldIndex extends FieldIndex {
 
