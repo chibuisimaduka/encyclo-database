@@ -9,7 +9,7 @@ import encyclo.Models.Entity;
 
 public class Database {
 
-	public static final Map TABLES = new HashMap<String, String>();
+	public static final Map<Integer, String> TABLES = new HashMap<Integer, String>();
 	
 	private Entity _entity = Entity.newBuilder().build();
 	
@@ -18,7 +18,9 @@ public class Database {
 	}
 	
 	public static void main(String[] args) {
-		Database database = new Database(Entity.getDescriptor(), new IdFieldIndex(Entity.ID_FIELD_NUMBER));
+		Database database = new Database(Entity.getDescriptor(),
+				new IdFieldIndexFactory(new int[]{Entity.ID_FIELD_NUMBER}, 
+					new ListFieldsIndexFactory()));
 	}
 	
 }

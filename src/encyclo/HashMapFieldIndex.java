@@ -2,7 +2,7 @@ package encyclo;
 
 public class HashMapFieldIndex extends FieldIndex {
 
-	public HashMapFieldIndex(FieldIndex nextIndex) {
+	public HashMapFieldIndex(int fieldNumber, String string, FieldIndex nextIndex) {
 		super(nextIndex);
 	}
 

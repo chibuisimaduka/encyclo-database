@@ -12,7 +12,7 @@ public class HashMapFieldIndexFactory extends FieldIndexFactory {
 
 	@Override
 	public FieldIndex create(Descriptor descriptor) {
-		return new HashMapFieldIndex(Database.TABLES.get(fieldNumber));
+		return new HashMapFieldIndex(fieldNumber, Database.TABLES.get(fieldNumber), _nextIndex.create(descriptor));
 	}
 
 }
