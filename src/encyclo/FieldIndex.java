@@ -8,4 +8,9 @@ public abstract class FieldIndex {
 		_nextIndex = nextIndex;
 	}
 	
+	public final SearchResponse search(SearchQuery query) {
+		return _nextIndex == null ? searchIndex(new SearchResponse(), query) : searchIndex(_nextIndex.search(query), query);
+	}
+	
+	protected abstract SearchResponse searchIndex(SearchResponse response, SearchQuery query);
 }
