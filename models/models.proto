@@ -1,0 +1,11 @@
+package encyclo;
+
+option java_package = "encyclo";
+
+message Entity {
+  repeated Document documents = 1;
+}
+
+message Document {
+  repeated Entity entities = 1;
+}
