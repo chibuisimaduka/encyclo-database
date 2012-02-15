@@ -3,9 +3,11 @@ package encyclo;
 option java_package = "encyclo";
 
 message Entity {
-  repeated Document documents = 1;
+  optional int32 id = 1;
+  repeated Document documents = 2;
 }
 
 message Document {
-  repeated Entity entities = 1;
+  optional int32 id = 1;
+  repeated Entity entities = 2;
 }

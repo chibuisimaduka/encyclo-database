@@ -35,8 +35,15 @@ public final class Models {
       return encyclo.Models.internal_static_encyclo_Entity_fieldAccessorTable;
     }
     
-    // repeated .encyclo.Document documents = 1;
-    public static final int DOCUMENTS_FIELD_NUMBER = 1;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private boolean hasId;
+    private int id_ = 0;
+    public boolean hasId() { return hasId; }
+    public int getId() { return id_; }
+    
+    // repeated .encyclo.Document documents = 2;
+    public static final int DOCUMENTS_FIELD_NUMBER = 2;
     private java.util.List<encyclo.Models.Document> documents_ =
       java.util.Collections.emptyList();
     public java.util.List<encyclo.Models.Document> getDocumentsList() {
@@ -56,8 +63,11 @@ public final class Models {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (hasId()) {
+        output.writeInt32(1, getId());
+      }
       for (encyclo.Models.Document element : getDocumentsList()) {
-        output.writeMessage(1, element);
+        output.writeMessage(2, element);
       }
       getUnknownFields().writeTo(output);
     }
@@ -68,9 +78,13 @@ public final class Models {
       if (size != -1) return size;
     
       size = 0;
+      if (hasId()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, getId());
+      }
       for (encyclo.Models.Document element : getDocumentsList()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, element);
+          .computeMessageSize(2, element);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -234,6 +248,9 @@ public final class Models {
       
       public Builder mergeFrom(encyclo.Models.Entity other) {
         if (other == encyclo.Models.Entity.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
         if (!other.documents_.isEmpty()) {
           if (result.documents_.isEmpty()) {
             result.documents_ = new java.util.ArrayList<encyclo.Models.Document>();
@@ -265,7 +282,11 @@ public final class Models {
               }
               break;
             }
-            case 10: {
+            case 8: {
+              setId(input.readInt32());
+              break;
+            }
+            case 18: {
               encyclo.Models.Document.Builder subBuilder = encyclo.Models.Document.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addDocuments(subBuilder.buildPartial());
@@ -276,7 +297,25 @@ public final class Models {
       }
       
       
-      // repeated .encyclo.Document documents = 1;
+      // optional int32 id = 1;
+      public boolean hasId() {
+        return result.hasId();
+      }
+      public int getId() {
+        return result.getId();
+      }
+      public Builder setId(int value) {
+        result.hasId = true;
+        result.id_ = value;
+        return this;
+      }
+      public Builder clearId() {
+        result.hasId = false;
+        result.id_ = 0;
+        return this;
+      }
+      
+      // repeated .encyclo.Document documents = 2;
       public java.util.List<encyclo.Models.Document> getDocumentsList() {
         return java.util.Collections.unmodifiableList(result.documents_);
       }
@@ -366,8 +405,15 @@ public final class Models {
       return encyclo.Models.internal_static_encyclo_Document_fieldAccessorTable;
     }
     
-    // repeated .encyclo.Entity entities = 1;
-    public static final int ENTITIES_FIELD_NUMBER = 1;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private boolean hasId;
+    private int id_ = 0;
+    public boolean hasId() { return hasId; }
+    public int getId() { return id_; }
+    
+    // repeated .encyclo.Entity entities = 2;
+    public static final int ENTITIES_FIELD_NUMBER = 2;
     private java.util.List<encyclo.Models.Entity> entities_ =
       java.util.Collections.emptyList();
     public java.util.List<encyclo.Models.Entity> getEntitiesList() {
@@ -387,8 +433,11 @@ public final class Models {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (hasId()) {
+        output.writeInt32(1, getId());
+      }
       for (encyclo.Models.Entity element : getEntitiesList()) {
-        output.writeMessage(1, element);
+        output.writeMessage(2, element);
       }
       getUnknownFields().writeTo(output);
     }
@@ -399,9 +448,13 @@ public final class Models {
       if (size != -1) return size;
     
       size = 0;
+      if (hasId()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, getId());
+      }
       for (encyclo.Models.Entity element : getEntitiesList()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, element);
+          .computeMessageSize(2, element);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -565,6 +618,9 @@ public final class Models {
       
       public Builder mergeFrom(encyclo.Models.Document other) {
         if (other == encyclo.Models.Document.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
         if (!other.entities_.isEmpty()) {
           if (result.entities_.isEmpty()) {
             result.entities_ = new java.util.ArrayList<encyclo.Models.Entity>();
@@ -596,7 +652,11 @@ public final class Models {
               }
               break;
             }
-            case 10: {
+            case 8: {
+              setId(input.readInt32());
+              break;
+            }
+            case 18: {
               encyclo.Models.Entity.Builder subBuilder = encyclo.Models.Entity.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addEntities(subBuilder.buildPartial());
@@ -607,7 +667,25 @@ public final class Models {
       }
       
       
-      // repeated .encyclo.Entity entities = 1;
+      // optional int32 id = 1;
+      public boolean hasId() {
+        return result.hasId();
+      }
+      public int getId() {
+        return result.getId();
+      }
+      public Builder setId(int value) {
+        result.hasId = true;
+        result.id_ = value;
+        return this;
+      }
+      public Builder clearId() {
+        result.hasId = false;
+        result.id_ = 0;
+        return this;
+      }
+      
+      // repeated .encyclo.Entity entities = 2;
       public java.util.List<encyclo.Models.Entity> getEntitiesList() {
         return java.util.Collections.unmodifiableList(result.entities_);
       }
@@ -689,10 +767,10 @@ public final class Models {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014models.proto\022\007encyclo\".\n\006Entity\022$\n\tdoc" +
-      "uments\030\001 \003(\0132\021.encyclo.Document\"-\n\010Docum" +
-      "ent\022!\n\010entities\030\001 \003(\0132\017.encyclo.EntityB\t" +
-      "\n\007encyclo"
+      "\n\014models.proto\022\007encyclo\":\n\006Entity\022\n\n\002id\030" +
+      "\001 \001(\005\022$\n\tdocuments\030\002 \003(\0132\021.encyclo.Docum" +
+      "ent\"9\n\010Document\022\n\n\002id\030\001 \001(\005\022!\n\010entities\030" +
+      "\002 \003(\0132\017.encyclo.EntityB\t\n\007encyclo"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -704,7 +782,7 @@ public final class Models {
           internal_static_encyclo_Entity_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_encyclo_Entity_descriptor,
-              new java.lang.String[] { "Documents", },
+              new java.lang.String[] { "Id", "Documents", },
               encyclo.Models.Entity.class,
               encyclo.Models.Entity.Builder.class);
           internal_static_encyclo_Document_descriptor =
@@ -712,7 +790,7 @@ public final class Models {
           internal_static_encyclo_Document_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_encyclo_Document_descriptor,
-              new java.lang.String[] { "Entities", },
+              new java.lang.String[] { "Id", "Entities", },
               encyclo.Models.Document.class,
               encyclo.Models.Document.Builder.class);
           return null;

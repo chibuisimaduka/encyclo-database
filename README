@@ -1,0 +1,2 @@
+# Compile protobuf
+/usr/bin/protoc -I=models/ --java_out=src/ models/models.proto
