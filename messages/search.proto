@@ -42,4 +42,5 @@ message SearchQuery {
 
 message SearchResponse {
   repeated bytes response_message = 1;
+  optional int32 query_time_ms = 2;
 }

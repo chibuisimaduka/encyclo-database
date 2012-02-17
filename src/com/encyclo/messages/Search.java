@@ -1488,6 +1488,13 @@ public final class Search {
       return responseMessage_.get(index);
     }
     
+    // optional int32 query_time_ms = 2;
+    public static final int QUERY_TIME_MS_FIELD_NUMBER = 2;
+    private boolean hasQueryTimeMs;
+    private int queryTimeMs_ = 0;
+    public boolean hasQueryTimeMs() { return hasQueryTimeMs; }
+    public int getQueryTimeMs() { return queryTimeMs_; }
+    
     private void initFields() {
     }
     public final boolean isInitialized() {
@@ -1499,6 +1506,9 @@ public final class Search {
       getSerializedSize();
       for (com.google.protobuf.ByteString element : getResponseMessageList()) {
         output.writeBytes(1, element);
+      }
+      if (hasQueryTimeMs()) {
+        output.writeInt32(2, getQueryTimeMs());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1517,6 +1527,10 @@ public final class Search {
         }
         size += dataSize;
         size += 1 * getResponseMessageList().size();
+      }
+      if (hasQueryTimeMs()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, getQueryTimeMs());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1686,6 +1700,9 @@ public final class Search {
           }
           result.responseMessage_.addAll(other.responseMessage_);
         }
+        if (other.hasQueryTimeMs()) {
+          setQueryTimeMs(other.getQueryTimeMs());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1713,6 +1730,10 @@ public final class Search {
             }
             case 10: {
               addResponseMessage(input.readBytes());
+              break;
+            }
+            case 16: {
+              setQueryTimeMs(input.readInt32());
               break;
             }
           }
@@ -1757,6 +1778,24 @@ public final class Search {
       }
       public Builder clearResponseMessage() {
         result.responseMessage_ = java.util.Collections.emptyList();
+        return this;
+      }
+      
+      // optional int32 query_time_ms = 2;
+      public boolean hasQueryTimeMs() {
+        return result.hasQueryTimeMs();
+      }
+      public int getQueryTimeMs() {
+        return result.getQueryTimeMs();
+      }
+      public Builder setQueryTimeMs(int value) {
+        result.hasQueryTimeMs = true;
+        result.queryTimeMs_ = value;
+        return this;
+      }
+      public Builder clearQueryTimeMs() {
+        result.hasQueryTimeMs = false;
+        result.queryTimeMs_ = 0;
         return this;
       }
       
@@ -1819,9 +1858,9 @@ public final class Search {
       "tor\022\n\n\006EQUALS\020\000\022\013\n\007GREATER\020\001\022\013\n\007SMALLER\020" +
       "\002\022\025\n\021GREATER_OR_EQUALS\020\003\022\025\n\021SMALLER_OR_E" +
       "QUALS\020\004\022\016\n\nNOT_EQUALS\020\005\022\013\n\007IS_NULL\020\006\022\017\n\013" +
-      "IS_NOT_NULL\020\007\"*\n\016SearchResponse\022\030\n\020respo" +
-      "nse_message\030\001 \003(\014B\036\n\024com.encyclo.message",
-      "sB\006Search"
+      "IS_NOT_NULL\020\007\"A\n\016SearchResponse\022\030\n\020respo" +
+      "nse_message\030\001 \003(\014\022\025\n\rquery_time_ms\030\002 \001(\005",
+      "B\036\n\024com.encyclo.messagesB\006Search"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1857,7 +1896,7 @@ public final class Search {
           internal_static_encyclo_SearchResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_encyclo_SearchResponse_descriptor,
-              new java.lang.String[] { "ResponseMessage", },
+              new java.lang.String[] { "ResponseMessage", "QueryTimeMs", },
               com.encyclo.messages.Search.SearchResponse.class,
               com.encyclo.messages.Search.SearchResponse.Builder.class);
           return null;
