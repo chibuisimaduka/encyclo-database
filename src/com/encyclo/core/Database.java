@@ -2,11 +2,13 @@ package com.encyclo.core;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.encyclo.messages.CustomModels.Entity;
 import com.encyclo.messages.Search.SearchQuery;
 import com.encyclo.messages.Search.SearchResponse;
+import com.encyclo.messages.Search.SearchQuery.SelectField;
 import com.encyclo.messages.Search.SearchQuery.WhereStatement;
 import com.encyclo.messages.Search.SearchQuery.WhereStatement.LogicalStatement;
 import com.encyclo.messages.Search.SearchQuery.WhereStatement.Operator;
@@ -51,13 +53,17 @@ public class Database {
 		SearchQuery query = SearchQuery.newBuilder()
 			.setIndexName("entities")
 			.setTableName("entity")
-			.addSelectField(Entity.ID_FIELD_NUMBER)
+			.addSelectField(select(Entity.PARENT_ID_FIELD_NUMBER))
 			.setWhereStatement(
 					where(Entity.PARENT_ID_FIELD_NUMBER, Operator.EQUALS, "6",
 							and(Entity.USER_ID_FIELD_NUMBER, Operator.EQUALS, "10").build()))
 			.build();
 		
 		database.search(query);
+	}
+	
+	private static SelectField select(int fieldId, SelectField... selectFields) {
+		return SelectField.newBuilder().setFieldId(fieldId).addAllSelectField(Arrays.asList(selectFields)).build();
 	}
 	
 	private static WhereStatement.Builder where(int field, Operator operator, LogicalStatement... additionalStatements) {

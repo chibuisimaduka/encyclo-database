@@ -35,6 +35,376 @@ public final class Search {
       return com.encyclo.messages.Search.internal_static_encyclo_SearchQuery_fieldAccessorTable;
     }
     
+    public static final class SelectField extends
+        com.google.protobuf.GeneratedMessage {
+      // Use SelectField.newBuilder() to construct.
+      private SelectField() {
+        initFields();
+      }
+      private SelectField(boolean noInit) {}
+      
+      private static final SelectField defaultInstance;
+      public static SelectField getDefaultInstance() {
+        return defaultInstance;
+      }
+      
+      public SelectField getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+      
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.encyclo.messages.Search.internal_static_encyclo_SearchQuery_SelectField_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.encyclo.messages.Search.internal_static_encyclo_SearchQuery_SelectField_fieldAccessorTable;
+      }
+      
+      // optional int32 field_id = 1;
+      public static final int FIELD_ID_FIELD_NUMBER = 1;
+      private boolean hasFieldId;
+      private int fieldId_ = 0;
+      public boolean hasFieldId() { return hasFieldId; }
+      public int getFieldId() { return fieldId_; }
+      
+      // repeated .encyclo.SearchQuery.SelectField select_field = 2;
+      public static final int SELECT_FIELD_FIELD_NUMBER = 2;
+      private java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> selectField_ =
+        java.util.Collections.emptyList();
+      public java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> getSelectFieldList() {
+        return selectField_;
+      }
+      public int getSelectFieldCount() { return selectField_.size(); }
+      public com.encyclo.messages.Search.SearchQuery.SelectField getSelectField(int index) {
+        return selectField_.get(index);
+      }
+      
+      private void initFields() {
+      }
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (hasFieldId()) {
+          output.writeInt32(1, getFieldId());
+        }
+        for (com.encyclo.messages.Search.SearchQuery.SelectField element : getSelectFieldList()) {
+          output.writeMessage(2, element);
+        }
+        getUnknownFields().writeTo(output);
+      }
+      
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+      
+        size = 0;
+        if (hasFieldId()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(1, getFieldId());
+        }
+        for (com.encyclo.messages.Search.SearchQuery.SelectField element : getSelectFieldList()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, element);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+      
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data).buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data).buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return newBuilder().mergeFrom(data, extensionRegistry)
+                 .buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input).buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Builder builder = newBuilder();
+        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+          return builder.buildParsed();
+        } else {
+          return null;
+        }
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input).buildParsed();
+      }
+      public static com.encyclo.messages.Search.SearchQuery.SelectField parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return newBuilder().mergeFrom(input, extensionRegistry)
+                 .buildParsed();
+      }
+      
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(com.encyclo.messages.Search.SearchQuery.SelectField prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+      
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> {
+        private com.encyclo.messages.Search.SearchQuery.SelectField result;
+        
+        // Construct using com.encyclo.messages.Search.SearchQuery.SelectField.newBuilder()
+        private Builder() {}
+        
+        private static Builder create() {
+          Builder builder = new Builder();
+          builder.result = new com.encyclo.messages.Search.SearchQuery.SelectField();
+          return builder;
+        }
+        
+        protected com.encyclo.messages.Search.SearchQuery.SelectField internalGetResult() {
+          return result;
+        }
+        
+        public Builder clear() {
+          if (result == null) {
+            throw new IllegalStateException(
+              "Cannot call clear() after build().");
+          }
+          result = new com.encyclo.messages.Search.SearchQuery.SelectField();
+          return this;
+        }
+        
+        public Builder clone() {
+          return create().mergeFrom(result);
+        }
+        
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.encyclo.messages.Search.SearchQuery.SelectField.getDescriptor();
+        }
+        
+        public com.encyclo.messages.Search.SearchQuery.SelectField getDefaultInstanceForType() {
+          return com.encyclo.messages.Search.SearchQuery.SelectField.getDefaultInstance();
+        }
+        
+        public boolean isInitialized() {
+          return result.isInitialized();
+        }
+        public com.encyclo.messages.Search.SearchQuery.SelectField build() {
+          if (result != null && !isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return buildPartial();
+        }
+        
+        private com.encyclo.messages.Search.SearchQuery.SelectField buildParsed()
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          if (!isInitialized()) {
+            throw newUninitializedMessageException(
+              result).asInvalidProtocolBufferException();
+          }
+          return buildPartial();
+        }
+        
+        public com.encyclo.messages.Search.SearchQuery.SelectField buildPartial() {
+          if (result == null) {
+            throw new IllegalStateException(
+              "build() has already been called on this Builder.");
+          }
+          if (result.selectField_ != java.util.Collections.EMPTY_LIST) {
+            result.selectField_ =
+              java.util.Collections.unmodifiableList(result.selectField_);
+          }
+          com.encyclo.messages.Search.SearchQuery.SelectField returnMe = result;
+          result = null;
+          return returnMe;
+        }
+        
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.encyclo.messages.Search.SearchQuery.SelectField) {
+            return mergeFrom((com.encyclo.messages.Search.SearchQuery.SelectField)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+        
+        public Builder mergeFrom(com.encyclo.messages.Search.SearchQuery.SelectField other) {
+          if (other == com.encyclo.messages.Search.SearchQuery.SelectField.getDefaultInstance()) return this;
+          if (other.hasFieldId()) {
+            setFieldId(other.getFieldId());
+          }
+          if (!other.selectField_.isEmpty()) {
+            if (result.selectField_.isEmpty()) {
+              result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
+            }
+            result.selectField_.addAll(other.selectField_);
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+        
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder(
+              this.getUnknownFields());
+          while (true) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  this.setUnknownFields(unknownFields.build());
+                  return this;
+                }
+                break;
+              }
+              case 8: {
+                setFieldId(input.readInt32());
+                break;
+              }
+              case 18: {
+                com.encyclo.messages.Search.SearchQuery.SelectField.Builder subBuilder = com.encyclo.messages.Search.SearchQuery.SelectField.newBuilder();
+                input.readMessage(subBuilder, extensionRegistry);
+                addSelectField(subBuilder.buildPartial());
+                break;
+              }
+            }
+          }
+        }
+        
+        
+        // optional int32 field_id = 1;
+        public boolean hasFieldId() {
+          return result.hasFieldId();
+        }
+        public int getFieldId() {
+          return result.getFieldId();
+        }
+        public Builder setFieldId(int value) {
+          result.hasFieldId = true;
+          result.fieldId_ = value;
+          return this;
+        }
+        public Builder clearFieldId() {
+          result.hasFieldId = false;
+          result.fieldId_ = 0;
+          return this;
+        }
+        
+        // repeated .encyclo.SearchQuery.SelectField select_field = 2;
+        public java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> getSelectFieldList() {
+          return java.util.Collections.unmodifiableList(result.selectField_);
+        }
+        public int getSelectFieldCount() {
+          return result.getSelectFieldCount();
+        }
+        public com.encyclo.messages.Search.SearchQuery.SelectField getSelectField(int index) {
+          return result.getSelectField(index);
+        }
+        public Builder setSelectField(int index, com.encyclo.messages.Search.SearchQuery.SelectField value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result.selectField_.set(index, value);
+          return this;
+        }
+        public Builder setSelectField(int index, com.encyclo.messages.Search.SearchQuery.SelectField.Builder builderForValue) {
+          result.selectField_.set(index, builderForValue.build());
+          return this;
+        }
+        public Builder addSelectField(com.encyclo.messages.Search.SearchQuery.SelectField value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          if (result.selectField_.isEmpty()) {
+            result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
+          }
+          result.selectField_.add(value);
+          return this;
+        }
+        public Builder addSelectField(com.encyclo.messages.Search.SearchQuery.SelectField.Builder builderForValue) {
+          if (result.selectField_.isEmpty()) {
+            result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
+          }
+          result.selectField_.add(builderForValue.build());
+          return this;
+        }
+        public Builder addAllSelectField(
+            java.lang.Iterable<? extends com.encyclo.messages.Search.SearchQuery.SelectField> values) {
+          if (result.selectField_.isEmpty()) {
+            result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
+          }
+          super.addAll(values, result.selectField_);
+          return this;
+        }
+        public Builder clearSelectField() {
+          result.selectField_ = java.util.Collections.emptyList();
+          return this;
+        }
+        
+        // @@protoc_insertion_point(builder_scope:encyclo.SearchQuery.SelectField)
+      }
+      
+      static {
+        defaultInstance = new SelectField(true);
+        com.encyclo.messages.Search.internalForceInit();
+        defaultInstance.initFields();
+      }
+      
+      // @@protoc_insertion_point(class_scope:encyclo.SearchQuery.SelectField)
+    }
+    
     public static final class WhereStatement extends
         com.google.protobuf.GeneratedMessage {
       // Use WhereStatement.newBuilder() to construct.
@@ -1016,15 +1386,15 @@ public final class Search {
     public boolean hasTableName() { return hasTableName; }
     public java.lang.String getTableName() { return tableName_; }
     
-    // repeated int32 select_field = 3;
+    // repeated .encyclo.SearchQuery.SelectField select_field = 3;
     public static final int SELECT_FIELD_FIELD_NUMBER = 3;
-    private java.util.List<java.lang.Integer> selectField_ =
+    private java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> selectField_ =
       java.util.Collections.emptyList();
-    public java.util.List<java.lang.Integer> getSelectFieldList() {
+    public java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> getSelectFieldList() {
       return selectField_;
     }
     public int getSelectFieldCount() { return selectField_.size(); }
-    public int getSelectField(int index) {
+    public com.encyclo.messages.Search.SearchQuery.SelectField getSelectField(int index) {
       return selectField_.get(index);
     }
     
@@ -1051,8 +1421,8 @@ public final class Search {
       if (hasTableName()) {
         output.writeString(2, getTableName());
       }
-      for (int element : getSelectFieldList()) {
-        output.writeInt32(3, element);
+      for (com.encyclo.messages.Search.SearchQuery.SelectField element : getSelectFieldList()) {
+        output.writeMessage(3, element);
       }
       if (hasWhereStatement()) {
         output.writeMessage(4, getWhereStatement());
@@ -1074,14 +1444,9 @@ public final class Search {
         size += com.google.protobuf.CodedOutputStream
           .computeStringSize(2, getTableName());
       }
-      {
-        int dataSize = 0;
-        for (int element : getSelectFieldList()) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(element);
-        }
-        size += dataSize;
-        size += 1 * getSelectFieldList().size();
+      for (com.encyclo.messages.Search.SearchQuery.SelectField element : getSelectFieldList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, element);
       }
       if (hasWhereStatement()) {
         size += com.google.protobuf.CodedOutputStream
@@ -1257,7 +1622,7 @@ public final class Search {
         }
         if (!other.selectField_.isEmpty()) {
           if (result.selectField_.isEmpty()) {
-            result.selectField_ = new java.util.ArrayList<java.lang.Integer>();
+            result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
           }
           result.selectField_.addAll(other.selectField_);
         }
@@ -1297,17 +1662,10 @@ public final class Search {
               setTableName(input.readString());
               break;
             }
-            case 24: {
-              addSelectField(input.readInt32());
-              break;
-            }
             case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addSelectField(input.readInt32());
-              }
-              input.popLimit(limit);
+              com.encyclo.messages.Search.SearchQuery.SelectField.Builder subBuilder = com.encyclo.messages.Search.SearchQuery.SelectField.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addSelectField(subBuilder.buildPartial());
               break;
             }
             case 34: {
@@ -1366,31 +1724,48 @@ public final class Search {
         return this;
       }
       
-      // repeated int32 select_field = 3;
-      public java.util.List<java.lang.Integer> getSelectFieldList() {
+      // repeated .encyclo.SearchQuery.SelectField select_field = 3;
+      public java.util.List<com.encyclo.messages.Search.SearchQuery.SelectField> getSelectFieldList() {
         return java.util.Collections.unmodifiableList(result.selectField_);
       }
       public int getSelectFieldCount() {
         return result.getSelectFieldCount();
       }
-      public int getSelectField(int index) {
+      public com.encyclo.messages.Search.SearchQuery.SelectField getSelectField(int index) {
         return result.getSelectField(index);
       }
-      public Builder setSelectField(int index, int value) {
+      public Builder setSelectField(int index, com.encyclo.messages.Search.SearchQuery.SelectField value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         result.selectField_.set(index, value);
         return this;
       }
-      public Builder addSelectField(int value) {
+      public Builder setSelectField(int index, com.encyclo.messages.Search.SearchQuery.SelectField.Builder builderForValue) {
+        result.selectField_.set(index, builderForValue.build());
+        return this;
+      }
+      public Builder addSelectField(com.encyclo.messages.Search.SearchQuery.SelectField value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         if (result.selectField_.isEmpty()) {
-          result.selectField_ = new java.util.ArrayList<java.lang.Integer>();
+          result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
         }
         result.selectField_.add(value);
         return this;
       }
-      public Builder addAllSelectField(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
+      public Builder addSelectField(com.encyclo.messages.Search.SearchQuery.SelectField.Builder builderForValue) {
         if (result.selectField_.isEmpty()) {
-          result.selectField_ = new java.util.ArrayList<java.lang.Integer>();
+          result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
+        }
+        result.selectField_.add(builderForValue.build());
+        return this;
+      }
+      public Builder addAllSelectField(
+          java.lang.Iterable<? extends com.encyclo.messages.Search.SearchQuery.SelectField> values) {
+        if (result.selectField_.isEmpty()) {
+          result.selectField_ = new java.util.ArrayList<com.encyclo.messages.Search.SearchQuery.SelectField>();
         }
         super.addAll(values, result.selectField_);
         return this;
@@ -1817,6 +2192,11 @@ public final class Search {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_encyclo_SearchQuery_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_encyclo_SearchQuery_SelectField_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_encyclo_SearchQuery_SelectField_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_encyclo_SearchQuery_WhereStatement_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -1840,27 +2220,30 @@ public final class Search {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014search.proto\022\007encyclo\"\303\005\n\013SearchQuery\022" +
+      "\n\014search.proto\022\007encyclo\"\276\006\n\013SearchQuery\022" +
       "\022\n\nindex_name\030\001 \001(\t\022\022\n\ntable_name\030\002 \001(\t\022" +
-      "\024\n\014select_field\030\003 \003(\005\022<\n\017where_statement" +
-      "\030\004 \001(\0132#.encyclo.SearchQuery.WhereStatem" +
-      "ent\032\267\004\n\016WhereStatement\022\r\n\005field\030\001 \001(\005\022>\n" +
-      "\010operator\030\002 \001(\0162,.encyclo.SearchQuery.Wh" +
-      "ereStatement.Operator\022\r\n\005value\030\003 \001(\t\022R\n\024" +
-      "additional_statement\030\004 \003(\01324.encyclo.Sea" +
-      "rchQuery.WhereStatement.LogicalStatement" +
-      "\032\343\001\n\020LogicalStatement\022_\n\014logical_type\030\001 ",
-      "\001(\0162I.encyclo.SearchQuery.WhereStatement" +
-      ".LogicalStatement.LogicalStatementType\022<" +
-      "\n\017where_statement\030\002 \001(\0132#.encyclo.Search" +
-      "Query.WhereStatement\"0\n\024LogicalStatement" +
-      "Type\022\006\n\002OR\020\000\022\007\n\003AND\020\001\022\007\n\003XOR\020\002\"\214\001\n\010Opera" +
-      "tor\022\n\n\006EQUALS\020\000\022\013\n\007GREATER\020\001\022\013\n\007SMALLER\020" +
-      "\002\022\025\n\021GREATER_OR_EQUALS\020\003\022\025\n\021SMALLER_OR_E" +
-      "QUALS\020\004\022\016\n\nNOT_EQUALS\020\005\022\013\n\007IS_NULL\020\006\022\017\n\013" +
-      "IS_NOT_NULL\020\007\"A\n\016SearchResponse\022\030\n\020respo" +
-      "nse_message\030\001 \003(\014\022\025\n\rquery_time_ms\030\002 \001(\005",
-      "B\036\n\024com.encyclo.messagesB\006Search"
+      "6\n\014select_field\030\003 \003(\0132 .encyclo.SearchQu" +
+      "ery.SelectField\022<\n\017where_statement\030\004 \001(\013" +
+      "2#.encyclo.SearchQuery.WhereStatement\032W\n" +
+      "\013SelectField\022\020\n\010field_id\030\001 \001(\005\0226\n\014select" +
+      "_field\030\002 \003(\0132 .encyclo.SearchQuery.Selec" +
+      "tField\032\267\004\n\016WhereStatement\022\r\n\005field\030\001 \001(\005" +
+      "\022>\n\010operator\030\002 \001(\0162,.encyclo.SearchQuery" +
+      ".WhereStatement.Operator\022\r\n\005value\030\003 \001(\t\022",
+      "R\n\024additional_statement\030\004 \003(\01324.encyclo." +
+      "SearchQuery.WhereStatement.LogicalStatem" +
+      "ent\032\343\001\n\020LogicalStatement\022_\n\014logical_type" +
+      "\030\001 \001(\0162I.encyclo.SearchQuery.WhereStatem" +
+      "ent.LogicalStatement.LogicalStatementTyp" +
+      "e\022<\n\017where_statement\030\002 \001(\0132#.encyclo.Sea" +
+      "rchQuery.WhereStatement\"0\n\024LogicalStatem" +
+      "entType\022\006\n\002OR\020\000\022\007\n\003AND\020\001\022\007\n\003XOR\020\002\"\214\001\n\010Op" +
+      "erator\022\n\n\006EQUALS\020\000\022\013\n\007GREATER\020\001\022\013\n\007SMALL" +
+      "ER\020\002\022\025\n\021GREATER_OR_EQUALS\020\003\022\025\n\021SMALLER_O",
+      "R_EQUALS\020\004\022\016\n\nNOT_EQUALS\020\005\022\013\n\007IS_NULL\020\006\022" +
+      "\017\n\013IS_NOT_NULL\020\007\"A\n\016SearchResponse\022\030\n\020re" +
+      "sponse_message\030\001 \003(\014\022\025\n\rquery_time_ms\030\002 " +
+      "\001(\005B\036\n\024com.encyclo.messagesB\006Search"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1875,8 +2258,16 @@ public final class Search {
               new java.lang.String[] { "IndexName", "TableName", "SelectField", "WhereStatement", },
               com.encyclo.messages.Search.SearchQuery.class,
               com.encyclo.messages.Search.SearchQuery.Builder.class);
-          internal_static_encyclo_SearchQuery_WhereStatement_descriptor =
+          internal_static_encyclo_SearchQuery_SelectField_descriptor =
             internal_static_encyclo_SearchQuery_descriptor.getNestedTypes().get(0);
+          internal_static_encyclo_SearchQuery_SelectField_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_encyclo_SearchQuery_SelectField_descriptor,
+              new java.lang.String[] { "FieldId", "SelectField", },
+              com.encyclo.messages.Search.SearchQuery.SelectField.class,
+              com.encyclo.messages.Search.SearchQuery.SelectField.Builder.class);
+          internal_static_encyclo_SearchQuery_WhereStatement_descriptor =
+            internal_static_encyclo_SearchQuery_descriptor.getNestedTypes().get(1);
           internal_static_encyclo_SearchQuery_WhereStatement_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_encyclo_SearchQuery_WhereStatement_descriptor,
