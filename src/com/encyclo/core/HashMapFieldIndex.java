@@ -2,18 +2,20 @@ package com.encyclo.core;
 
 import com.encyclo.messages.Search.SearchQuery;
 import com.encyclo.messages.Search.SearchResponse.Builder;
+import com.google.protobuf.Descriptors.FieldDescriptor;
 
 public class HashMapFieldIndex extends FieldIndex {
 
-	private int _field;
+	private FieldDescriptor _field;
 	
-	public HashMapFieldIndex(int fieldNumber, String string, FieldIndex nextIndex) {
+	public HashMapFieldIndex(FieldDescriptor field, String string, FieldIndex nextIndex) {
 		super(nextIndex);
 	}
 
 	@Override
-	protected Builder searchIndex(Builder response, SearchQuery query) {
-		if (query.getSelectFieldList().contains(_field)) {
+	protected Builder searchIndex(SearchQuery query, Builder builder) {
+		if (query.getSelectFieldList().contains(_field.getIndex())) {
+			builder.setField(arg0, arg1);
 			response.addResponseMessage(value);
 		}
 		return null;

@@ -13,7 +13,7 @@ public class IdFieldIndexFactory extends FieldIndexFactory {
 
 	@Override
 	public FieldIndex create(Descriptor descriptor) {
-		return new IdFieldIndex(_idsFieldNumbers, Database.TABLES.get(_idsFieldNumbers));
+		return new IdFieldIndex(_idsFieldNumbers, Index.TABLES.get(_idsFieldNumbers));
 	}
 
 }
