@@ -15,7 +15,7 @@ public class HashMapFieldIndex extends FieldIndex {
 	@Override
 	protected Builder searchIndex(SearchQuery query, Builder builder) {
 		if (query.getSelectFieldList().contains(_field.getIndex())) {
-			builder.setField(arg0, arg1);
+			builder.setField(_field, arg1);
 			response.addResponseMessage(value);
 		}
 		return null;
